@@ -1,0 +1,19 @@
+.category-item {
+    display: flex;
+    align-items: center;
+    .category-image {
+        width: 44px;
+        height: 44px;
+        background: #F7F7F7;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .category-name {
+        font-weight: 700;
+        font-size: 16px;
+        color: #182135;
+        margin-left: 15px;
+    }
+}

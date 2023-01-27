@@ -1,0 +1,22 @@
+<div class="header-container">
+    <div class="header-left"> 
+        <div class="header-back">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </div>
+    </div>
+    <div class="header-right">
+            <div *ngIf="isShowSearch" class="store-icon">
+                <mat-icon>store</mat-icon> <span>Da Otto</span> <mat-icon>swap_vert</mat-icon>
+            </div>
+            <div *ngIf="isShowSearch" class="input-container">
+                <mat-icon>search</mat-icon>
+                <input type="text" placeholder="Search for Restaurants (Press enter to search)"/>
+            </div>
+                <div *ngIf="isShowSearch" (click)="toggleDrawer.emit({})" class="icon-box" [style.background]="'#503E9D'">
+                    <mat-icon>filter_list</mat-icon>
+                </div>
+                <div class="icon-box" [style.background]="'#FB6D3A'">
+                    <mat-icon>shopping_cart</mat-icon>
+                </div>
+            </div>
+            </div>

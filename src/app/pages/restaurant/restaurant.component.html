@@ -1,0 +1,36 @@
+<!-- <app-header [isShowSearch]="false"></app-header> -->
+<div class="restaurant-detail" *ngIf="restaurantData">
+    <div class="row align-items-center">
+        <div class="col-lg-5 col-md-7 col-sm-12 restaurant-text">
+            <p class="title">{{restaurantData.restaurantName}}</p>
+            <p class="desc">{{restaurantData.restaurantDescription}}</p>
+            <p class="time"><mat-icon>query_builder</mat-icon>
+{{restaurantData.openingHours}}</p>
+            <p class="call">
+                <mat-icon> call</mat-icon>{{restaurantData.contactNumber}}
+            </p>
+            <p class="web"><mat-icon>language</mat-icon>{{restaurantData.websiteUrl}}</p>
+        </div>
+        <div class="col-lg-7 col-md-5 col-sm-12 restaurant-image">
+            <img src="{{restaurantData.restaurantImage}}"/>
+        </div>
+    </div>
+    <div class="divider">
+        <mat-divider></mat-divider>
+    </div>
+</div>
+<div class="menu-container" *ngIf="restaurantData"> 
+    <div class="category" >
+        <div class="category-item" *ngFor="let category of allCategory;let i = index" [ngClass]="{ 'active' : activeCategory === i }" (click)="changeCategory(category,i)">
+            {{category.name}}<span *ngIf="category.name != 'All'">({{getMenuCount(category)}})</span>
+        </div>
+    </div>
+    <p class="title">
+        Menu
+    </p>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of menuByCategory">
+            <app-menu-item [mItem]="item"></app-menu-item>
+        </div>
+    </div>
+</div>

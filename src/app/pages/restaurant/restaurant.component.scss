@@ -1,0 +1,96 @@
+.restaurant-detail {
+    margin-top: 50px;
+    .restaurant-text {
+        .title {
+            font-weight: 700;
+            font-size: 32px;
+            color: #182135;
+            margin-bottom: 20px;
+        }
+        .desc {
+            font-weight: 400;
+            font-size: 16px;
+            color: #626264;
+        }
+        .time {
+            font-weight: 400;
+            font-size: 16px;
+            color: #626264;
+            margin: 0;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        
+            .mat-icon {
+                margin-right: 18px;
+            }
+        }
+        .call {
+            font-weight: 400;
+            font-size: 16px;
+            color: #626264;
+            margin: 0;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            .mat-icon {
+                margin-right: 18px;
+            }
+        }
+        .web {
+            font-weight: 400;
+            font-size: 16px;
+            color: #626264;
+            margin: 0;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            .mat-icon {
+                margin-right: 18px;
+            }
+        }
+    }
+    .restaurant-image {
+        img {
+            height: 296px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+    }
+    .divider {
+            padding-top: 50px;
+            margin: auto;
+            width: 50%;
+    }
+}
+.menu-container {
+    margin-top: 50px;
+    .category {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+        .category-item {
+            background: #F7F7F7;
+            color: #626264;
+            margin-right: 15px;
+            border-radius: 8px;
+            height: 40px;
+            padding:0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                cursor: pointer;
+        }
+        .active {
+            background: #182135;
+            color: white;
+        }
+    }
+    .title {
+        font-weight: 700;
+        font-size: 24px;
+        color: #182135;
+        margin-bottom: 30px;
+    }
+}

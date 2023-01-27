@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #fff;}
+.mat-badge-medium.mat-badge-after .mat-badge-content {
+    right: 10px !important;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+    top: 16px !important;
+}
+.stacked--up {
+    padding: 0 !important;
+    &:before,
+    &:after {
+        transform-origin: center bottom;
+    }
+
+    transform: translate(0, -5px);
+
+    &:before {
+        transform: translate(0, 12px) scale(0.95);
+    }
+
+    &:after {
+        transform: translate(0, 24px) scale(0.90);
+    }
+}
+
+@for $i from 1 through 10 {
+    .card-#{$i} {
+        $card-color: #fff;
+        $card-color-light: darken($card-color, 30%);
+        $card-color-dark: darken($card-color, 30%);
+
+        .content {
+            background-color: $card-color-light !important;
+            border-radius: 5px;
+        }
+
+        &:before,
+        &:after {
+            border-radius: 5px;
+        }
+
+        &:before {
+            background-color: $card-color !important;
+        }
+
+        .title,
+        &:after {
+            background-color: $card-color-dark !important;
+        }
+    }
+}
+
+
+// ------------------------------------------------------
+
+
+$animation-timing: 0.3s;
+$animation-ease: ease-in-out;
+$animation-ease-bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+[class*='stacked--'] {
+    position: relative;
+    transition: transform $animation-timing $animation-ease;
+    will-change: transform;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.04);
+        transition: transform $animation-timing $animation-ease;
+        will-change: transform;
+    }
+
+    &:before {
+        z-index: -1;
+        border-radius: 20px;
+    }
+
+    &:after {
+        z-index: -2;
+        border-radius: 20px;
+    }
+}
+.mat-card-image {
+    margin: 0 !important;
+    width: 100% !important;
+}
+.mat-card-content {
+    background: white !important;
+    border-radius: 20px !important;
+    padding-bottom: 20px;
+}
+.mat-card {
+    box-shadow: none !important;
+    border-radius: 20px !important;
+}
