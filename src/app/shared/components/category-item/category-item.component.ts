@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { category } from 'src/app/restaurant.interface';
 
 @Component({
   selector: 'app-category-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./category-item.component.scss'],
 })
 export class CategoryItemComponent implements OnInit {
-  @Input('cItem') item: any;
+  @Input('cItem') item: category | undefined;
 
   constructor() {}
 

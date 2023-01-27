@@ -1,27 +1,28 @@
-
-
 export interface restaurants {
-    restaurantDetails:restaurantItem[]
+  restaurantDetails: restaurantItem[];
 }
-export interface restaurantItem  {
-    contactNumber: String,
-    id: Number,
-    openingHours:String,
-    restaurantDescription: String,
-    restaurantImage:String,
-    websiteUrl: String,
-    restaurantName:String,
+export interface restaurantItem {
+  contactNumber: string;
+  id: number;
+  openingHours: string;
+  restaurantDescription: string;
+  restaurantImage: string;
+  websiteUrl: string;
+  restaurantName: string;
 }
-
 
 export interface menus {
-    menu:menuItem[]
+  menu: menuItem[];
 }
-export interface menuItem  {
-    itemCategory: String,
-    id: Number,
-    itemCost:String,
-    itemName: String,
-    itemPhoto:String,
-    restaurantName:String,
+export interface menuItem {
+  itemCategory: string;
+  id: number;
+  itemCost: string;
+  itemName: string;
+  itemPhoto: string;
+  restaurantName: string;
+}
+export interface category {
+  name: string;
+  image: string;
 }

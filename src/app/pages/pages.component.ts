@@ -8,12 +8,11 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./pages.component.scss'],
 })
 export class PagesComponent implements OnInit {
-  routeUrl: any;
+  routeUrl: string = '';
   constructor(private observer: BreakpointObserver, public router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.routeUrl = event['url'];
-        console.log(this.routeUrl);
       }
     });
   }

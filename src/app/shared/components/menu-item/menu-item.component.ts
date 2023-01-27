@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { menuItem } from 'src/app/restaurant.interface';
 
 @Component({
   selector: 'app-menu-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./menu-item.component.scss'],
 })
 export class MenuItemComponent implements OnInit {
-  @Input('mItem') item: any;
+  @Input('mItem') item: menuItem | undefined;
 
   constructor() {}
 

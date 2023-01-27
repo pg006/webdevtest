@@ -1,20 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { restaurantItem } from 'src/app/restaurant.interface';
 @Component({
   selector: 'app-restaurants-item',
   templateUrl: './restaurants-item.component.html',
   styleUrls: ['./restaurants-item.component.scss'],
 })
 export class RestaurantsItemComponent implements OnInit {
-  @Input('rItem') item: any;
+  @Input('rItem') item: restaurantItem | undefined;
   constructor(public router: Router) {}
 
   ngOnInit(): void {}
   openDetail() {
-    this.router.navigateByUrl('restaurant-detail/' + this.item.restaurantName);
+    this.router.navigateByUrl('restaurant-detail/' + this.item?.restaurantName);
   }
-  getStatus(openingTime: string) {
+  getStatus(openingTime: any) {
     let date = moment();
     let day = moment().day();
     let weekArray = openingTime.split(',');

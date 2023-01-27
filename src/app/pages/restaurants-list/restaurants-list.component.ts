@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { category, restaurantItem } from 'src/app/restaurant.interface';
 import { RestaurantService } from 'src/app/service/restaurant.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { RestaurantService } from 'src/app/service/restaurant.service';
   styleUrls: ['./restaurants-list.component.scss'],
 })
 export class RestaurantsListComponent implements OnInit {
-  allRestaurant: any = [];
-  allCategory = [
+  allRestaurant: restaurantItem[] = [];
+  allCategory: category[] = [
     { name: 'Baked', image: '/assets/category/ob.png' },
     { name: 'Sweet', image: '/assets/category/bg.png' },
     { name: 'Hot Dish', image: '/assets/category/ph.png' },
@@ -24,7 +25,6 @@ export class RestaurantsListComponent implements OnInit {
 
   getRestaurant() {
     this.restaurants.getRestaurantDetails().subscribe((res: any) => {
-      console.log(res);
       this.allRestaurant = res.restaurantDetails;
     });
   }

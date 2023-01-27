@@ -5,6 +5,7 @@ import {
   restaurantItem,
   menus,
   restaurants,
+  category,
 } from '../../restaurant.interface';
 import { RestaurantService } from '../../service/restaurant.service';
 
@@ -16,7 +17,7 @@ import { RestaurantService } from '../../service/restaurant.service';
 export class RestaurantComponent implements OnInit {
   // display
   restaurantData: any;
-  allCategory = [
+  allCategory: category[] = [
     { name: 'All', image: '/assets/category/ob.png' },
     { name: 'Baked', image: '/assets/category/ob.png' },
     { name: 'Sweet', image: '/assets/category/bg.png' },
@@ -24,13 +25,13 @@ export class RestaurantComponent implements OnInit {
     { name: 'Fast Foods', image: '/assets/category/md.png' },
     { name: 'Salads', image: '/assets/category/md.png' },
   ];
-  activeCategory: any = 0;
+  activeCategory: number = 0;
 
   allRestaurant: restaurantItem[] = [];
   allMenu: menuItem[] = [];
   menuByRestaurant: any = [];
   menuByCategory: any = [];
-  restaurantName: any;
+  restaurantName: string = '';
   constructor(
     public restaurants: RestaurantService,
     public activatedRoute: ActivatedRoute
@@ -45,7 +46,7 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  changeCategory(category: any, i: number) {
+  changeCategory(category: category, i: number) {
     this.activeCategory = i;
     this.filterCategory(category.name);
   }
@@ -64,7 +65,7 @@ export class RestaurantComponent implements OnInit {
     }
   }
 
-  getMenuCount(category: any) {
+  getMenuCount(category: category) {
     let tempMenu: any = [];
     this.menuByRestaurant.forEach((element: menuItem) => {
       const item = element.itemCategory.includes(category.name.toString());
@@ -91,12 +92,12 @@ export class RestaurantComponent implements OnInit {
 
   getMenuByRestaturant() {
     this.restaurantData = this.allRestaurant.find(
-      (item: restaurantItem) => item.restaurantName === this.restaurantName
+      (item: restaurantItem) => item?.restaurantName === this.restaurantName
     );
 
     this.allMenu.forEach((element: menuItem) => {
       const item = element.restaurantName.includes(
-        this.restaurantData.restaurantName
+        this.restaurantData?.restaurantName
       );
       if (item) {
         this.menuByRestaurant.push(element);
