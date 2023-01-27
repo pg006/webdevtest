@@ -1,29 +1,58 @@
-<!-- <mat-sidenav-container>
-<mat-sidenav class="mat-elevation-z8">
-    <button mat-button class="menu-button">
-        <mat-icon>home</mat-icon>
-        <span>Home</span>
-    </button>
-    <button mat-button class="menu-button">
-        <mat-icon>person</mat-icon>
-        <span>Profile</span>
-    </button>
-    <button mat-button class="menu-button">
-        <mat-icon>info</mat-icon>
-        <span>About</span>
-    </button>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <div class="logo-container">
+            <img src="../../assets/logo.png">
+            <span>Pomo & co</span>
+        </div>
+        <button mat-button class="menu-button active">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>receipt</mat-icon>
+            <span>Orders</span>
+        </button>
+        <button mat-button matBadge="2" matBadgeOverlap="false" class="menu-button">
+            <mat-icon>email</mat-icon>
+            <span>Notification</span>
 
-    <mat-divider></mat-divider>
+        </button>
 
-    <button mat-button class="menu-button">
-        <mat-icon>help</mat-icon>
-        <span>Help</span>
-    </button>
 
-</mat-sidenav>
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Help & Support</span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+        <mat-card class="order-card stacked--up">
+            <mat-card-content>
+                <div class="close-icon">
+                    <mat-icon>close</mat-icon>
+                </div>
+                <div class="clock-icon">
+                    <div>
+                        <mat-icon>query_builder</mat-icon>
+                    </div>
+                    <p class="order-status">Your Order is now Ready</p>
+                    <p class="order-detail">Splint Doumo</p>
+                    <p class="order-detail">Order Id: #ED564F</p>
+                </div>
+                <button mat-button class="detail-button active">
+                    <span>Details</span>
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </mat-sidenav>
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
-            Main content here!
+            <app-header (toggleDrawer)="toggleDrawer.emit({})"
+                [isShowSearch]="routeUrl.includes('restaurant-detail') ? false : true"></app-header>
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
-</mat-sidenav-container> -->
+</mat-sidenav-container>

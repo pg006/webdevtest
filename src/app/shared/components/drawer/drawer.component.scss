@@ -1,0 +1,113 @@
+.filter-drawer {
+    width: 350px;
+    padding: 20px;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 45px;
+
+        p {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: #182135;
+            margin: 0;
+        }
+
+        p:last-child {
+            width: 48px;
+            height: 48px;
+            margin: 0;
+            background: #F7F7F7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .filter-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: #182135;
+        margin-bottom: 30px;
+    }
+
+    .sortBy {
+        display: flex;
+        align-items: center;
+        margin-bottom: 45px;
+
+        p {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 32px;
+            color: #FB6D3A;
+            margin: 0;
+        }
+
+        p:first-child {
+            width: 48px;
+            height: 48px;
+            margin: 0;
+            background: rgba(251, 109, 58, 0.1);
+            border-radius: 9px;
+            display: flex;
+            color: #FB6D3A;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+    }
+
+    .cuisines {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 25px;
+
+        .cuisine {
+            background: #F7F7F7;
+            border-radius: 6px;
+            padding: 0 10px;
+            font-weight: 400;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            height: 40px;
+            color: #626264;
+        }
+    }
+
+    .filter-button {
+        position: absolute;
+        bottom: 40px;
+        width: 86%;
+
+        .menu-button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 0px;
+            height: 56px;
+
+            mat-icon {
+                margin-right: 24px;
+            }
+
+        }
+
+        .active {
+            background: #503E9D;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+        }
+    }
+}

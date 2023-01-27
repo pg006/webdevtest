@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RestaurantsItemComponent } from './components/restaurants-item/restaurants-item.component';
 import { CategoryItemComponent } from './components/category-item/category-item.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MenuItemComponent } from './components/menu-item/menu-item.component';
     RestaurantsItemComponent,
     CategoryItemComponent,
     MenuItemComponent,
+    DrawerComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +42,7 @@ import { MenuItemComponent } from './components/menu-item/menu-item.component';
     SidemenuComponent,
     RestaurantsItemComponent,
     CategoryItemComponent,
+    DrawerComponent,
     MenuItemComponent,
   ],
 })

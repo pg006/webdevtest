@@ -1,0 +1,26 @@
+<div class="filter-drawer">
+    <div class="title">
+        <p>Search Filters</p>
+        <p (click)="toggleDrawer.emit({})">
+            <mat-icon>close</mat-icon>
+        </p>
+    </div>
+    <p class="filter-title">Sort By</p>
+    <div class="sortBy">
+        <p>
+            <mat-icon>whatshot</mat-icon>
+        </p>
+        <p>Open</p>
+    </div>
+    <p class="filter-title">Cuisine</p>
+    <div class="cuisines">
+        <div class="cuisine" *ngFor="let c of cuisines">
+            {{c}}
+        </div>
+    </div>
+    <div class="filter-button">
+        <button mat-button class="menu-button active">
+            Apply Filters
+        </button>
+    </div>
+</div>

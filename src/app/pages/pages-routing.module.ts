@@ -20,7 +20,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'restaurant/:name',
+        path: 'restaurant-detail/:name',
         loadChildren: () =>
           import('./restaurant/restaurant.module').then(
             (m) => m.RestaurantsModule

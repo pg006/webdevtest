@@ -4,7 +4,7 @@
     </div>
     <div class="restaurant-name">
         <p>{{item.restaurantName}}</p>
-        <p>Open Now</p>
+        <p [style.background]="getStatus(item.openingHours) ? '#503e9d1a':'#fb6d3a1a'" [style.color]="getStatus(item.openingHours) ? '#503E9D':'#FB6D3A'">{{getStatus(item.openingHours) ? 'Open Now' : 'Closed'}}</p>
     </div>
     <div class="restaurant-detail">
         <p>{{item.restaurantDescription}}</p>
